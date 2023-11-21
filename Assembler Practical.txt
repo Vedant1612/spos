@@ -1,0 +1,19 @@
+An assembler is a type of programming language translator that converts assembly language code into machine code or an intermediate code. Assembly language is a low-level programming language that is specific to a particular computer architecture. It consists of mnemonics and symbols that represent the operations and registers of the computer's instruction set.
+
+The assembler plays a crucial role in the software development process by translating human-readable assembly code into binary machine code that the computer's central processing unit (CPU) can execute. This process involves generating a one-to-one correspondence between assembly language instructions and the corresponding machine code instructions.
+
+The design of a two-pass assembler involves two sequential phases, each responsible for different tasks:
+
+1. **Pass 1:**
+   - **Location Counter (LC):** The assembler assigns a location counter to keep track of the memory addresses of the program.
+   - **Symbol Table:** It builds a symbol table that records the addresses and values of symbols used in the program.
+   - **Intermediate File Generation:** The assembler generates an intermediate file containing information like opcode, operands, and addresses.
+
+2. **Pass 2:**
+   - **Object Code Generation:** The assembler uses the information from the intermediate file to generate the actual machine code or object code.
+   - **Literal Pool Handling:** If the program contains literals, pass 2 handles their assignment and generation.
+   - **Expression Evaluation:** Handles expressions, evaluating and generating code for expressions in the program.
+   - **Error Handling:** Checks for errors that may not have been detected in pass 1, such as invalid opcodes or operands.
+   - **Output Generation:** Produces the final executable or relocatable object code file.
+
+In summary, the two-pass assembler design separates the tasks of analyzing the source program and generating machine code into two distinct passes. The first pass focuses on analysis and building data structures, while the second pass uses that information to generate the final executable code. This two-pass approach allows for efficient handling of symbol resolution and expression evaluation.
